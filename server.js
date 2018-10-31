@@ -10,7 +10,7 @@ const responseForRequest = (request) => {
     Object.assign(route, routeMapper())
     const response = route[request.path] || error
     const r = response(request)
-    log('response', r)
+    // log('response', r)
     return r
 }
 
@@ -20,7 +20,7 @@ const processRequest = (socket, data) => {
     const r = data.toString()
     // log(`request log:\n${r}`)
     const request = new Request(r)  // 形成request 对象{}的格式
-    log('request Object:', request)
+    // log('request Object:', request)
     const response = responseForRequest(request)
     s.write(response)
     s.destroy()

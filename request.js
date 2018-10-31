@@ -34,6 +34,17 @@ class Request {
         this.addCookies()
     }
 
+    form() {
+        const body = decodeURIComponent(this.body)
+        const pairs = body.split('&')
+        const d = {}
+        pairs.forEach((pair) => {
+            const[k, v] = pair.split('=')
+            d[k] = v
+        })
+        return d
+    }
+
     parsedPath(path) {
         const index = path.indexOf('?')
         if (index === -1) {
