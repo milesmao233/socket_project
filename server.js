@@ -10,6 +10,7 @@ const responseForRequest = (request) => {
     Object.assign(route, routeMapper())
     const response = route[request.path] || error
     const r = response(request)
+    log('response', r)
     return r
 }
 

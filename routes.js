@@ -1,4 +1,5 @@
 const log = require('./utils')
+const fs = require('fs')
 
 const headerFromMapper = (mapper={}, code=200) => {
     let base = `HTTP/1.1 ${code} OK \r\n`
@@ -7,22 +8,33 @@ const headerFromMapper = (mapper={}, code=200) => {
     return header
 }
 
+
+const template = (name) => {
+    const path = 'templates/' + name
+    const options = {
+        encoding: 'utf8'
+    }
+    const content = fs.readFileSync(path, options)
+    return content
+}
+
 const index = (request) => {
     const headers = {
         'Content-Type': 'text/html'
     }
     const header = headerFromMapper(headers)
-    let body = 'Hello World'
+    let body = template('index.html')
 
     const r = header + '\r\n' + body
+    log('request test', request)
     return r
 }
 
-const error = (code=404) => {
+const error = () => {
     const e = {
-        404: 'HTTP/1.1 404 NOT FOUND\r\n\r\n<h1>NOT FOUND</h1>',
+        404: 'HTTP/1.1 404 NOT FOUND0\r\n\r\n<h1>NOT FOUND</h1>',
     }
-    const r = e[code] || ''
+    const r = e[404] || ''
     return r
 }
 
