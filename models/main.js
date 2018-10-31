@@ -49,6 +49,13 @@ class Model {
         return ms
     }
 
+    static findBy(key, value) {
+        const models = this.all()
+        let m = models.find(e => e[key] === value)
+        const model = m || null
+        return model
+    }
+
     save() {
         const cls = this.constructor
         const models = cls.all()

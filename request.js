@@ -16,7 +16,7 @@ class Request {
 
     addCookies() {
         const cookies = this.headers.Cookie || ''
-        const pairs = cookies.split(': ')
+        const pairs = cookies.split('; ')
         pairs.forEach((pair) => {
             if (pair.includes('=')){
                 const [k, v] = pair.split('=')

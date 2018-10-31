@@ -8,6 +8,12 @@ class User extends Model {
         this.role = 2
     }
 
+    static validateLogin(form) {
+        const {username, password} = form
+        const u = this.findBy('username', username)
+        return u !== null && u.password === password
+    }
+
     validateRegister() {
         return this.username.length > 2 && this.password.length > 2
     }
