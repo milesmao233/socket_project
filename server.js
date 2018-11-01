@@ -3,11 +3,14 @@ const net = require('net')
 const log = require('./utils')
 const Request = require('./request')
 const {routeMapper, error} = require('./routes')
+const routeTodo = require('./routes_todo')
+
 
 
 const responseForRequest = (request) => {
     const route = {}
     Object.assign(route, routeMapper())
+    Object.assign(route, routeTodo())
     const response = route[request.path] || error
     const r = response(request)
     // log('response', r)

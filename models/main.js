@@ -62,6 +62,24 @@ class Model {
         return m || null
     }
 
+    static findAll(key, value) {
+        const all = this.all()
+        let model = all.filter(k => k[key] === value)
+        return model
+    }
+
+    static remove(id) {
+        const ms = this.all()
+        const index = ms.findIndex(m => m.id === id)
+        log('index', index)
+        if (index > -1) {
+            ms.splice(index, 1)
+        }
+        const path = this.dbPath()
+        log('ms', ms)
+        save_data(ms, path)
+    }
+
     save() {
         const cls = this.constructor
         const models = cls.all()

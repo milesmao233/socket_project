@@ -192,4 +192,9 @@ const routeMapper = () => {
 module.exports = {
     routeMapper: routeMapper,
     error: error,
+    template: template,
+    headerFromMapper: headerFromMapper,
+    redirect: redirect,
+    currentUser: currentUser,
+    loginRequired: loginRequired,
 }
