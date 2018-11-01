@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin 管理</title>
+</head>
+<body>
+<h1>用户管理</h1>
+
+<div>{{users}}</div>
+
+<form action="/admin/user/update" method="post">
+    <input type="text" name="id" placeholder="请输入id">
+    <br>
+    <input type="text" name="password" placeholder="请输入password">
+    <br>
+    <button type="submit">提交修改</button>
+</form>
+</body>
+</html>

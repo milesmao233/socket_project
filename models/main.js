@@ -52,8 +52,14 @@ class Model {
     static findBy(key, value) {
         const models = this.all()
         let m = models.find(e => e[key] === value)
-        const model = m || null
-        return model
+        // for (let m of models) {
+        //     if (m[key] === value) {
+        //         return m
+        //     } else {
+        //         return null
+        //     }
+        // }
+        return m || null
     }
 
     save() {

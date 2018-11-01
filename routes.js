@@ -40,6 +40,12 @@ const currentUsername = (request) => {
     return u
 }
 
+const currentUser = (request) => {
+    const sid = request.cookies.user || ''
+    const uid = session[sid]
+    const u = User.findBy('id', uid)
+    return u
+}
 
 const template = (name) => {
     const path = 'templates/' + name
@@ -48,6 +54,39 @@ const template = (name) => {
     }
     const content = fs.readFileSync(path, options)
     return content
+}
+
+const redirect = (url) => {
+    const headers = {
+        'Location': url,
+    }
+    const r = headerFromMapper(headers, 302) + '\r\n'
+    return r
+}
+
+const loginRequired = (func) => {
+    const f = (request) => {
+        const u = currentUser(request)
+        if (u === null) {
+            return redirect('/login')
+        } else {
+            return func(request)
+        }
+    }
+    return f
+}
+
+const adminRequired = (func) => {
+    const f = (request) => {
+        const u = currentUser(request)
+        log('u', u)
+        if (u === null || u.role !== 1) {
+            return redirect('/login')
+        } else {
+            return func(request)
+        }
+    }
+    return f
 }
 
 const index = (request) => {
@@ -73,7 +112,7 @@ const login = (request) => {
             // 创建session_id
             const sid = randomStr()
             session[sid] = u.id
-            log('session', session)
+            // log('session', session)
             headers['Set-Cookie'] = `user=${sid}`
             result = '登录成功'
         } else {
@@ -118,11 +157,32 @@ const register = (request) => {
 }
 
 
+const adminUser = (request) => {
+    const headers = {
+        'Content-Type': 'text/html',
+    }
+    const header = headerFromMapper(headers)
+    let body = template('admin.html')
+    const users = User.all()
+    body = body.replace('{{users}}', users)
+    const r = header + '\r\n' + body
+    return r
+}
+
+const adminuserUpdate = (request) => {
+    const form = request.form()
+    User.update(form)
+    return redirect('/admin/users')
+}
+
+
 const routeMapper = () => {
     const d = {
         '/': index,
         '/login': login,
         '/register': register,
+        '/admin/users': loginRequired(adminRequired(adminUser)),
+        '/admin/user/update':adminRequired(adminuserUpdate),
     }
 
     return d

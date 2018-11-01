@@ -2,13 +2,13 @@
   {
     "id": 0,
     "username": "miles",
-    "password": "123",
-    "role": 2
+    "password": "333",
+    "role": 1
   },
   {
     "id": 1,
     "username": "miles",
-    "password": "123",
+    "password": "333",
     "role": 2
   },
   {

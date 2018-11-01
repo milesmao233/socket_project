@@ -14,6 +14,13 @@ class User extends Model {
         return u !== null && u.password === password
     }
 
+    static update(form) {
+        const userId = Number(form.id || -1)
+        const u = this.findBy('id', userId)
+        u.password = form.password
+        u.save()
+    }
+
     validateRegister() {
         return this.username.length > 2 && this.password.length > 2
     }
