@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f318d682-7685-4469-afe7-9cde49c0e7d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/models/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="f318d682-7685-4469-afe7-9cde49c0e7d0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,7 +15,7 @@
     <session id="1081340703">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
@@ -47,7 +43,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="41" />
-          <entry key="js" value="7325" />
+          <entry key="js" value="7346" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
@@ -55,7 +51,7 @@
         <counts>
           <entry key="HTML" value="41" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="7325" />
+          <entry key="JavaScript" value="7346" />
         </counts>
       </usages-collector>
     </session>
@@ -107,8 +103,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="684">
-                  <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+                <state relative-caret-position="732">
+                  <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -285,30 +281,29 @@
       <updated>1540972774528</updated>
       <workItem from="1540972777030" duration="315000" />
       <workItem from="1540973176385" duration="13825000" />
-      <workItem from="1541031539061" duration="5905000" />
+      <workItem from="1541031539061" duration="6071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20045000" />
+    <option name="totallyTimeSpent" value="20211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1139" y="23" width="1869" height="1669" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.083333336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21750158" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21750158" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994927" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974002" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32974002" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -439,8 +434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+        <state relative-caret-position="732">
+          <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
         </state>
       </provider>
     </entry>
