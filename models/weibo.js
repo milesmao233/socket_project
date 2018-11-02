@@ -9,10 +9,24 @@ class Weibo extends Model {
         this.userId = Number('userId' in form ? form.userId : userId)
     }
 
+    static add(form, userId) {
+        form.userId = userId
+        Weibo.create(form)
+    }
+
     user() {
         const u = User.get(this.userId)
         return u
     }
+
+    comments() {
+        return Comment.findAll('weiboId', this.id)
+    }
+
+    isOwner(id) {
+        return this.userId === id
+    }
+
 
 }
 

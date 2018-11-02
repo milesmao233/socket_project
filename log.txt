@@ -221,3 +221,10 @@
 2018/11/2 15:41:11 user User { id: -1, username: '游客', password: '', role: 2 }
 2018/11/2 15:43:52 listening server at http://127.0.0.1:5000
 2018/11/2 15:43:59 session: 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 15:59:25 listening server at http://127.0.0.1:5000
+2018/11/2 16:7:5 listening server at http://127.0.0.1:5000
+2018/11/2 16:7:40 listening server at http://127.0.0.1:5000
+2018/11/2 16:12:6 listening server at http://127.0.0.1:5000
+2018/11/2 16:12:55 listening server at http://127.0.0.1:5000
+2018/11/2 16:15:11 listening server at http://127.0.0.1:5000
+2018/11/2 16:17:47 listening server at http://127.0.0.1:5000
