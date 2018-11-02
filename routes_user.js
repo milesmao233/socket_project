@@ -19,32 +19,26 @@ const loginView = (request) => {
 }
 
 const login = (request) => {
-    const headers = {}
-    let result = ''
     let u = null
 
     const form = request.form()
-    log('form', form)
     if (User.validateLogin(form)) {
         u = User.findBy('username', form.username)
-        log('u', u)
-        const sessionId = randomString()
-        Session.create({
-            sessionId: sessionId,
-            userId: u.id,
+        const s = Session.encrypt({
+            uid: u.id,
         })
-        headers['Set-Cookie'] = `sessionId=${sessionId}`
-        result = '登录成功'
+        log('session:', s)
+        const headers = {
+            'Set-Cookie': `session=${s}; Path=/`
+        }
+        return redirect('/', headers)
     } else {
-        result = '用户名或密码错误'
-        u = User.guest()
+        const result = '登录失败'
+        const body = template('login.html', {
+            result: result
+        })
+        return htmlResponse(body)
     }
-
-    const body = template('login.html', {
-        result: result,
-        username: u.username,
-    })
-    return htmlResponse(body, headers)
 }
 
 const registerView = (request) => {

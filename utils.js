@@ -50,8 +50,11 @@ const template = (path, data) => {
     const r = env.render(path, data)
     return r
 }
+const secretKey = 'doge'
+
 
 module.exports = {
     log: log,
     template: template,
+    secretKey: secretKey,
 }

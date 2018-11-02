@@ -5,6 +5,7 @@ const Request = require('./request')
 const {routeMapper, error} = require('./routes')
 const routeTodo = require('./routes_todo')
 const routeUser = require('./routes_user')
+const routeWeibo = require('./routes_weibo')
 
 
 
@@ -13,6 +14,7 @@ const responseForRequest = (request) => {
     Object.assign(route, routeMapper())
     Object.assign(route, routeTodo())
     Object.assign(route, routeUser())
+    Object.assign(route, routeWeibo())
     const response = route[request.path] || error
     const r = response(request)
     // log('response', r)
@@ -38,7 +40,7 @@ const run = (host='', port=3000) => {
     // 服务器监听连接
     server.listen(port, host, () => {
         const address = server.address()
-        // log(`listening server at http://${address.address}:${address.port}`)
+        log(`listening server at http://${address.address}:${address.port}`)
     })
 
     // 建立新的连接，触发connection

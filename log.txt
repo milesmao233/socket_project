@@ -34,3 +34,190 @@
 2018/11/2 9:56:47 ip, 127.0.0.1
 2018/11/2 10:11:7 form { username: 'miles', password: '333' }
 2018/11/2 10:11:7 u User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 12:59:50 listening server at http://127.0.0.1:5000
+2018/11/2 13:5:28 listening server at http://127.0.0.1:5000
+2018/11/2 13:5:41 listening server at http://127.0.0.1:5000
+2018/11/2 13:6:12 listening server at http://127.0.0.1:5000
+2018/11/2 13:6:24 form { username: 'miles', password: '123' }
+2018/11/2 13:6:28 form { username: 'miles', password: '333' }
+2018/11/2 13:6:28 u User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 13:6:47 listening server at http://127.0.0.1:5000
+2018/11/2 13:9:3 listening server at http://127.0.0.1:5000
+2018/11/2 13:9:54 listening server at http://127.0.0.1:5000
+2018/11/2 13:9:55 sessionId undefined
+2018/11/2 13:13:41 sessionId undefined
+2018/11/2 13:14:7 sessionId undefined
+2018/11/2 13:14:12 form { username: 'miles', password: '333' }
+2018/11/2 13:14:12 u User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 13:17:22 form { username: 'tiantian', password: '123' }
+2018/11/2 13:17:22 u User { id: 4, username: 'tiantian', password: '123', role: 2 }
+2018/11/2 13:17:51 form { username: 'tiantian', password: '123' }
+2018/11/2 13:17:51 u User { id: 4, username: 'tiantian', password: '123', role: 2 }
+2018/11/2 13:19:57 listening server at http://127.0.0.1:5000
+2018/11/2 13:19:58 sessionId undefined
+2018/11/2 13:20:9 sessionId undefined
+2018/11/2 13:29:9 listening server at http://127.0.0.1:5000
+2018/11/2 13:29:10 sessionId undefined
+2018/11/2 13:29:13 sessionId undefined
+2018/11/2 13:29:17 form { username: 'miles', password: '123' }
+2018/11/2 13:29:21 form { username: 'miles', password: '333' }
+2018/11/2 13:29:21 u User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 13:29:33 form { username: 'miles', password: '333' }
+2018/11/2 13:29:33 u User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 13:29:48 sessionId undefined
+2018/11/2 13:29:58 sessionId undefined
+2018/11/2 13:42:56 listening server at http://127.0.0.1:5000
+2018/11/2 13:43:2 sessionId undefined
+2018/11/2 13:43:6 form { username: 'miles', password: '123' }
+2018/11/2 13:43:12 form { username: 'miles', password: '333' }
+2018/11/2 13:43:12 u User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 13:44:3 listening server at http://127.0.0.1:5000
+2018/11/2 13:51:27 listening server at http://127.0.0.1:5000
+2018/11/2 13:52:22 listening server at http://127.0.0.1:5000
+2018/11/2 13:52:36 listening server at http://127.0.0.1:5000
+2018/11/2 13:53:23 listening server at http://127.0.0.1:5000
+2018/11/2 13:53:37 listening server at http://127.0.0.1:5000
+2018/11/2 13:54:11 listening server at http://127.0.0.1:5000
+2018/11/2 13:54:29 listening server at http://127.0.0.1:5000
+2018/11/2 13:54:32 sessionId undefined
+2018/11/2 13:54:35 sessionId undefined
+2018/11/2 13:54:56 listening server at http://127.0.0.1:5000
+2018/11/2 13:55:1 sessionId undefined
+2018/11/2 13:55:4 sessionId undefined
+2018/11/2 13:55:32 sessionId 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 13:56:44 listening server at http://127.0.0.1:5000
+2018/11/2 13:57:7 listening server at http://127.0.0.1:5000
+2018/11/2 14:0:16 listening server at http://127.0.0.1:5000
+2018/11/2 14:0:16 sessionId undefined
+2018/11/2 14:0:24 sessionId undefined
+2018/11/2 14:1:10 sessionId undefined
+2018/11/2 14:10:38 listening server at http://127.0.0.1:5000
+2018/11/2 14:10:47 sessionId undefined
+2018/11/2 14:10:49 sessionId undefined
+2018/11/2 14:14:34 listening server at http://127.0.0.1:5000
+2018/11/2 14:14:36 sessionId undefined
+2018/11/2 14:14:37 sessionId undefined
+2018/11/2 14:14:48 session: 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 14:14:48 sessionId undefined
+2018/11/2 14:15:10 sessionId undefined
+2018/11/2 14:15:19 listening server at http://127.0.0.1:5000
+2018/11/2 14:15:20 sessionId undefined
+2018/11/2 14:16:43 listening server at http://127.0.0.1:5000
+2018/11/2 14:16:44 sessionId undefined
+2018/11/2 14:16:55 sessionId undefined
+2018/11/2 14:19:26 listening server at http://127.0.0.1:5000
+2018/11/2 14:19:27 sessionId undefined
+2018/11/2 14:19:29 sessionId undefined
+2018/11/2 14:19:33 session: 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 14:19:33 sessionId 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 14:19:40 sessionId 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 14:22:26 listening server at http://127.0.0.1:5000
+2018/11/2 14:22:46 listening server at http://127.0.0.1:5000
+2018/11/2 14:23:41 listening server at http://127.0.0.1:5000
+2018/11/2 14:23:43 sessionId undefined
+2018/11/2 14:23:46 sessionId undefined
+2018/11/2 14:24:21 listening server at http://127.0.0.1:5000
+2018/11/2 14:24:23 sessionId undefined
+2018/11/2 14:24:26 sessionId undefined
+2018/11/2 14:25:6 sessionId undefined
+2018/11/2 14:25:19 sessionId undefined
+2018/11/2 14:26:42 sessionId undefined
+2018/11/2 14:26:44 sessionId undefined
+2018/11/2 14:26:56 sessionId undefined
+2018/11/2 14:27:3 sessionId undefined
+2018/11/2 14:27:31 listening server at http://127.0.0.1:5000
+2018/11/2 14:27:32 sessionId undefined
+2018/11/2 14:29:48 listening server at http://127.0.0.1:5000
+2018/11/2 14:30:14 listening server at http://127.0.0.1:5000
+2018/11/2 14:30:47 listening server at http://127.0.0.1:5000
+2018/11/2 14:31:8 listening server at http://127.0.0.1:5000
+2018/11/2 14:31:9 sessionId hvv8vov6s7dcd6md
+2018/11/2 14:31:9 session Session {
+  id: 11,
+  sessionId: 'hvv8vov6s7dcd6md',
+  userId: 0,
+  expiredTime: 1541143658042 }
+2018/11/2 14:35:13 listening server at http://127.0.0.1:5000
+2018/11/2 14:35:47 listening server at http://127.0.0.1:5000
+2018/11/2 14:35:48 sessionId hvv8vov6s7dcd6md
+2018/11/2 14:35:48 session Session {
+  id: 11,
+  sessionId: 'hvv8vov6s7dcd6md',
+  userId: 0,
+  expiredTime: 1541143658042 }
+2018/11/2 14:35:48 时间戳 1541143658042
+2018/11/2 14:35:48 now 1541140548645
+2018/11/2 14:36:8 listening server at http://127.0.0.1:5000
+2018/11/2 14:36:9 sessionId hvv8vov6s7dcd6md
+2018/11/2 14:36:9 时间戳 1541143658042
+2018/11/2 14:36:9 now 1541140569961
+2018/11/2 14:36:9 r false
+2018/11/2 14:36:9 session Session {
+  id: 11,
+  sessionId: 'hvv8vov6s7dcd6md',
+  userId: 0,
+  expiredTime: 1541143658042 }
+2018/11/2 14:38:6 listening server at http://127.0.0.1:5000
+2018/11/2 14:38:9 sessionId hvv8vov6s7dcd6md
+2018/11/2 14:38:9 session Session {
+  id: 11,
+  sessionId: 'hvv8vov6s7dcd6md',
+  userId: 0,
+  expiredTime: 1541143658042 }
+2018/11/2 14:38:9 时间戳 1541143658042
+2018/11/2 14:38:9 now 1541140689438
+2018/11/2 14:38:9 r false
+2018/11/2 14:38:13 sessionId hvv8vov6s7dcd6md
+2018/11/2 14:38:13 session Session {
+  id: 11,
+  sessionId: 'hvv8vov6s7dcd6md',
+  userId: 0,
+  expiredTime: 1541143658042 }
+2018/11/2 14:38:13 时间戳 1541143658042
+2018/11/2 14:38:13 now 1541140693240
+2018/11/2 14:38:13 r false
+2018/11/2 14:38:25 sessionId vdfsdga4kkjsbwau
+2018/11/2 14:38:25 session Session {
+  id: 12,
+  sessionId: 'vdfsdga4kkjsbwau',
+  userId: 0,
+  expiredTime: 1541140697661 }
+2018/11/2 14:38:25 时间戳 1541140697661
+2018/11/2 14:38:25 now 1541140705964
+2018/11/2 14:38:25 r true
+2018/11/2 14:39:12 listening server at http://127.0.0.1:5000
+2018/11/2 14:39:14 sessionId vdfsdga4kkjsbwau
+2018/11/2 14:39:14 session Session {
+  id: 12,
+  sessionId: 'vdfsdga4kkjsbwau',
+  userId: 0,
+  expiredTime: 1541140697661 }
+2018/11/2 14:39:16 sessionId vdfsdga4kkjsbwau
+2018/11/2 14:39:16 session Session {
+  id: 12,
+  sessionId: 'vdfsdga4kkjsbwau',
+  userId: 0,
+  expiredTime: 1541140697661 }
+2018/11/2 14:39:23 sessionId vdfsdga4kkjsbwau
+2018/11/2 14:39:23 session Session {
+  id: 12,
+  sessionId: 'vdfsdga4kkjsbwau',
+  userId: 0,
+  expiredTime: 1541140697661 }
+2018/11/2 15:35:40 listening server at http://127.0.0.1:5000
+2018/11/2 15:36:29 listening server at http://127.0.0.1:5000
+2018/11/2 15:36:40 session: 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 15:37:56 listening server at http://127.0.0.1:5000
+2018/11/2 15:37:57 user User { id: -1, username: '游客', password: '', role: 2 }
+2018/11/2 15:38:5 session: 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 15:38:5 user User { id: -1, username: '游客', password: '', role: 2 }
+2018/11/2 15:39:19 session: 0f437132f1ddb0a4ba71f93f7fa83b32
+2018/11/2 15:39:19 user User { id: -1, username: '游客', password: '', role: 2 }
+2018/11/2 15:39:52 user User { id: -1, username: '游客', password: '', role: 2 }
+2018/11/2 15:41:2 listening server at http://127.0.0.1:5000
+2018/11/2 15:41:5 user User { id: -1, username: '游客', password: '', role: 2 }
+2018/11/2 15:41:11 user User { id: 0, username: 'miles', password: '333', role: 2 }
+2018/11/2 15:41:11 session: 325a2a0638c85c0f442b12d573426b7e
+2018/11/2 15:41:11 user User { id: -1, username: '游客', password: '', role: 2 }
+2018/11/2 15:43:52 listening server at http://127.0.0.1:5000
+2018/11/2 15:43:59 session: 325a2a0638c85c0f442b12d573426b7e

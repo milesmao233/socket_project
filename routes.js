@@ -1,6 +1,7 @@
 const {log, template} = require('./utils')
 const fs = require('fs')
 const User = require('./models/user')
+const Session = require('./models/session')
 
 // const session = {}
 
@@ -41,12 +42,12 @@ const currentUsername = (request) => {
 }
 
 const currentUser = (request) => {
-    const sessionId = request.cookies.sessionId
-    if (sessionId !== undefined) {
-        const s = Session.findBy('sessionId', sessionId)
-        if (s !== null && !s.expired()) {
-            const uid = s.userId
-            const u = User.get(uid)
+    const s = request.cookies.session
+    if (s !== undefined) {
+        // log('debug s in current user', s)
+        const r = Session.decrypt(s)
+        const u = User.get(r.uid)
+        if (u !== null) {
             return u
         } else {
             return User.guest()
@@ -57,13 +58,28 @@ const currentUser = (request) => {
 }
 
 
-const redirect = (url) => {
-    const headers = {
+// const redirect = (url) => {
+//     const headers = {
+//         'Location': url,
+//     }
+//     const r = headerFromMapper(headers, 302) + '\r\n'
+//     return r
+// }
+
+const redirect = (url, headers={}) => {
+    // 浏览器在收到 302 响应的时候
+    // 会自动在 HTTP header 里面找 Location 字段并获取一个 url
+    // 然后自动请求新的 url
+    const h = {
         'Location': url,
     }
-    const r = headerFromMapper(headers, 302) + '\r\n'
+    Object.assign(headers, h)
+    // 增加 Location 字段并生成 HTTP 响应返回
+    // 注意, 没有 HTTP body 部分
+    const r = headerFromMapper(headers, 302) + '\r\n' + ''
     return r
 }
+
 
 const htmlResponse = (body, headers=null) => {
     const h = {
@@ -100,8 +116,11 @@ const adminRequired = (func) => {
     return f
 }
 
-const index = () => {
-    const body = template('index.html')
+const index = (request) => {
+    const u = currentUser(request)
+    const body = template('index.html', {
+        username: u.username,
+    })
     return htmlResponse(body)
 }
 
