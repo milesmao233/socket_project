@@ -3,7 +3,7 @@
     "id": 0,
     "username": "miles",
     "password": "333",
-    "role": 1
+    "role": 2
   },
   {
     "id": 1,
@@ -27,6 +27,12 @@
     "id": 4,
     "username": "tiantian",
     "password": "123",
+    "role": 2
+  },
+  {
+    "id": 5,
+    "username": "mmm",
+    "password": "333",
     "role": 2
   }
 ]

@@ -1,8 +1,8 @@
-const log = require('./utils')
+const {log, template} = require('./utils')
 const fs = require('fs')
 const User = require('./models/user')
 
-const session = {}
+// const session = {}
 
 const error = () => {
     const e = {
@@ -19,7 +19,7 @@ const headerFromMapper = (mapper={}, code=200) => {
     return header
 }
 
-const randomStr = () => {
+const randomString = () => {
     const seed = 'asdfghjokpwefdsui3456789dfghjk67wsdcfvgbnmkcvb2e'
     let s = ''
     for (let i = 0; i < 16; i++) {
@@ -41,26 +41,37 @@ const currentUsername = (request) => {
 }
 
 const currentUser = (request) => {
-    const sid = request.cookies.user || ''
-    const uid = session[sid]
-    const u = User.findBy('id', uid)
-    return u
+    const sessionId = request.cookies.sessionId
+    if (sessionId !== undefined) {
+        const s = Session.findBy('sessionId', sessionId)
+        if (s !== null && !s.expired()) {
+            const uid = s.userId
+            const u = User.get(uid)
+            return u
+        } else {
+            return User.guest()
+        }
+    } else {
+        return User.guest()
+    }
 }
 
-const template = (name) => {
-    const path = 'templates/' + name
-    const options = {
-        encoding: 'utf8'
-    }
-    const content = fs.readFileSync(path, options)
-    return content
-}
 
 const redirect = (url) => {
     const headers = {
         'Location': url,
     }
     const r = headerFromMapper(headers, 302) + '\r\n'
+    return r
+}
+
+const htmlResponse = (body, headers=null) => {
+    const h = {
+        'Content-Type': 'text/html',
+    }
+    headers = Object.assign(h, headers)
+    const header = headerFromMapper(headers)
+    const r = header + '\r\n' + body
     return r
 }
 
@@ -89,73 +100,10 @@ const adminRequired = (func) => {
     return f
 }
 
-const index = (request) => {
-    const headers = {
-        'Content-Type': 'text/html'
-    }
-    const header = headerFromMapper(headers)
-    let body = template('index.html')
-
-    const r = header + '\r\n' + body
-    return r
+const index = () => {
+    const body = template('index.html')
+    return htmlResponse(body)
 }
-
-const login = (request) => {
-    const headers = {
-        'Content-Type': 'text/html'
-    }
-    let result
-    if (request.method === 'POST') {
-        const form = request.form()
-        if (User.validateLogin(form)) {
-            const u = User.findBy('username', form.username)
-            // 创建session_id
-            const sid = randomStr()
-            session[sid] = u.id
-            // log('session', session)
-            headers['Set-Cookie'] = `user=${sid}`
-            result = '登录成功'
-        } else {
-            result = '用户名或密码错误'
-        }
-    } else {
-        result = ''
-    }
-    const username = currentUsername(request)
-    const header = headerFromMapper(headers)
-    let body = template('login.html')
-    body = body.replace('{{result}}', result)
-    body = body.replace('{{username}}', username)
-    const r = header + '\r\n' + body
-    return r
-}
-
-const register = (request) => {
-    let result
-    if (request.method === 'POST') {
-        const form = request.form()
-        const u = User.create(form)
-        if (u.validateRegister()) {
-            u.save()
-            const us = User.all()
-            result = `注册成功<br><pre>${us}</pre>`
-        } else {
-            result = '用户名或者密码长度大于2'
-        }
-    } else {
-        result = ''
-    }
-    const headers = {
-        'Content-Type': 'text/html'
-    }
-    const header = headerFromMapper(headers)
-    let body = template('register.html')
-    body = body.replace('{{result}}', result)
-
-    const r = header + '\r\n' + body
-    return r
-}
-
 
 const adminUser = (request) => {
     const headers = {
@@ -179,8 +127,6 @@ const adminuserUpdate = (request) => {
 const routeMapper = () => {
     const d = {
         '/': index,
-        '/login': login,
-        '/register': register,
         '/admin/users': loginRequired(adminRequired(adminUser)),
         '/admin/user/update':adminRequired(adminuserUpdate),
     }
@@ -192,9 +138,10 @@ const routeMapper = () => {
 module.exports = {
     routeMapper: routeMapper,
     error: error,
-    template: template,
     headerFromMapper: headerFromMapper,
     redirect: redirect,
     currentUser: currentUser,
     loginRequired: loginRequired,
+    htmlResponse: htmlResponse,
+    randomString: randomString,
 }

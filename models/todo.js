@@ -1,28 +1,30 @@
 const Model = require('./main')
-const {currentUser} = require('../routes')
 
 class Todo extends Model {
-    constructor(form={}) {
+    constructor(form={}, userId=-1) {
         super(form)
-        this.title = form.title || ''
-        this.userId = 'userId' in form ? form.userId : -1
-        this.createdTime = 'createdTime' in form ? form.createdTime : null
-        this.updatedTime = 'updatedTime' in form ? form.updatedTime : null
+        this.task = form.task || ''
+        // 和别的数据的关联的方式, 用 userId 表明拥有它的 user 实例
+        this.userId = 'userId' in form ? form.userId : userId
+    }
+
+    static add(form, userId) {
+        form.userId = userId
+        Todo.create(form)
     }
 
     static update(form) {
-        const todoId = Number(form.id || -1)
-        const t = this.findBy('id', todoId)
-        t.title = form.title
-        t.updatedTime = new Date().toLocaleDateString()
+        const todoId = form.id
+        const t = this.get(todoId)
+        const validNames = [
+            'task',
+        ]
+        Object.keys(form).forEach(k => {
+            if (validNames.includes(k)) {
+                t[k] = form[k]
+            }
+        })
         t.save()
-    }
-
-    static is_owner(form, request) {
-        const todoId = Number(form.id || -1)
-        const t = Todo.findBy('id, todoId')
-        const u = currentUser(request)
-        return u.id === t.userId
     }
 }
 

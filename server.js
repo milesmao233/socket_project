@@ -1,9 +1,10 @@
 const net = require('net')
 
-const log = require('./utils')
+const {log} = require('./utils')
 const Request = require('./request')
 const {routeMapper, error} = require('./routes')
 const routeTodo = require('./routes_todo')
+const routeUser = require('./routes_user')
 
 
 
@@ -11,6 +12,7 @@ const responseForRequest = (request) => {
     const route = {}
     Object.assign(route, routeMapper())
     Object.assign(route, routeTodo())
+    Object.assign(route, routeUser())
     const response = route[request.path] || error
     const r = response(request)
     // log('response', r)
@@ -36,14 +38,14 @@ const run = (host='', port=3000) => {
     // 服务器监听连接
     server.listen(port, host, () => {
         const address = server.address()
-        log(`listening server at http://${address.address}:${address.port}`)
+        // log(`listening server at http://${address.address}:${address.port}`)
     })
 
     // 建立新的连接，触发connection
     server.on('connection', (s) => {
         s.on('data', (data) => {
             const ip = s.localAddress
-            log(`ip, ${ip}`)
+            // log(`ip, ${ip}`)
             processRequest(s, data)
         })
     })

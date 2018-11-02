@@ -37,15 +37,21 @@ class Model {
     }
 
     // 形成类的实例
+    static _newFromMapper(mapper) {
+        const m = new this(mapper)
+        return m
+    }
+
     static create(form={}) {
         const m = new this(form)
+        m.save()
         return m
     }
 
     static all() {
         const path = this.dbPath()
         const models = load(path) // 返回JSON格式
-        const ms = models.map(m => this.create(m))
+        const ms = models.map(m => this._newFromMapper(m))
         return ms
     }
 
@@ -66,6 +72,10 @@ class Model {
         const all = this.all()
         let model = all.filter(k => k[key] === value)
         return model
+    }
+
+    static get(id) {
+        return this.findBy('id', id)
     }
 
     static remove(id) {

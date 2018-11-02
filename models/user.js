@@ -21,8 +21,21 @@ class User extends Model {
         u.save()
     }
 
-    validateRegister() {
-        return this.username.length > 2 && this.password.length > 2
+    static guest() {
+        const o = {
+            id: -1,
+            username: '游客',
+        }
+        const u = this.create(o)
+        return u
+    }
+
+    static validateRegister(form) {
+        const {username, password} = form
+        const validUsername = username.length > 2
+        const validPassword = password.length > 2
+        const uniqueUsername = User.findBy('username', username) === null
+        return validUsername && validPassword && uniqueUsername
     }
 }
 
